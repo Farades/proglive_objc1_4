@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 farades. All rights reserved.
 //
 
-//Сортировку не успел, свободного времени немного было за это дни.
-
 #import <Foundation/Foundation.h>
 #import "Figure.h"
 #import "Circle.h"
@@ -26,16 +24,17 @@ Figure* createRandomChain();
 NSString* chainToString(Figure *first);
 BOOL deleteElement(Figure* first, unsigned number);
 Figure* getRandomFigure();
+BOOL swipe(Figure *prev, Figure *a, Figure *b);
+Figure* bubbleSort(Figure *chain);
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         Figure* chainFirst = createRandomChain();
         NSLog(@"Длина списка = %i", length(chainFirst));
         NSLog(@"%@", chainToString(chainFirst));
-        deleteElement(chainFirst, 1);
-        NSLog(@"%@", chainToString(chainFirst));
-        insert(chainFirst, getRandomFigure());
-        NSLog(@"%@", chainToString(chainFirst));
+        
+        Figure *chainSort = bubbleSort(chainFirst);
+        NSLog(@"%@", chainToString(chainSort));
     }
     return 0;
 }
@@ -69,7 +68,7 @@ BOOL insert(Figure* first, Figure* newElement) {
 }
 
 Figure* createRandomChain() {
-    int n = arc4random_uniform(10) + 1;
+    int n = arc4random_uniform(5) + 7;
     Figure* first = getRandomFigure();
     if (n > 1) {
         Figure* tail = first;
@@ -136,4 +135,47 @@ Figure* getRandomFigure() {
             
     }
     return figure;
+}
+
+BOOL swipe(Figure *prev, Figure *a, Figure *b) {
+    prev->next = b;
+    a->next = b->next;
+    b->next = a;
+    return YES;
+}
+
+//Тут такая жесть из-за односвязности списка. Если мы свайпаем первый элемент, то функция должна вернуть указатель на "новый" первый элемент.
+//Также косяк из-за односвязности списка возникает с самим свайпом. Приходится отправлять ссылки на 3 элемента, по-другому тоже никак!
+//Вобщем смысл такой: первую итерацию внешнего цикла делаем ручками, т.к. она "особая" :)
+Figure* bubbleSort(Figure *chain) {
+    unsigned len = length(chain);
+    Figure *first  = chain;
+    Figure *second;
+    Figure *prev, *a, *b;
+    
+    for(int i = 0; i < len - 1; i++) {
+        if ( [first square] > [first->next square] ) {
+            second = first->next;
+            first->next = second->next;
+            second->next = first;
+            first = second;
+        }
+        prev = first;
+        a    = first->next;
+        b    = first->next->next;
+        for(int j = 0; j < len - i - 2; j++) {
+            if ( [a square] > [b square] ) {
+                swipe(prev, a, b);
+                prev = b;
+                a = a;
+                b = a->next;
+            } else {
+                prev = a;
+                a = b;
+                b = b->next;
+            }
+        }
+    }
+    
+    return first;
 }

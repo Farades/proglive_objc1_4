@@ -36,7 +36,7 @@
 
 -(NSString*)toString {
     NSString* res = [[NSString alloc] init];
-    res = [NSString stringWithFormat:@"Circle: Radius = %.2f, S = %.2f, L = %.2f", _radius, [self square], [self perimeter]];
+    res = [NSString stringWithFormat:@"Circle:    S = %.2f, Radius = %.2f, L = %.2f", [self square], _radius, [self perimeter]];
     return res;
 }
 

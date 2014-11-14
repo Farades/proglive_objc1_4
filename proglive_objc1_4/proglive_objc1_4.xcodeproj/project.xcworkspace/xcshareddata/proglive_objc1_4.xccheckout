@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>93BEB0D0-2548-40C3-A6AC-02C8FBA924F2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>proglive_objc1_4</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C4543D9203EF66A559BF1C73E2D2F5D93E9B6710</key>
+		<string>https://github.com/Farades/proglive_objc1_4.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>proglive_objc1_4/proglive_objc1_4.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C4543D9203EF66A559BF1C73E2D2F5D93E9B6710</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Farades/proglive_objc1_4.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C4543D9203EF66A559BF1C73E2D2F5D93E9B6710</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C4543D9203EF66A559BF1C73E2D2F5D93E9B6710</string>
+			<key>IDESourceControlWCCName</key>
+			<string>proglive_objc1_4</string>
+		</dict>
+	</array>
+</dict>
+</plist>

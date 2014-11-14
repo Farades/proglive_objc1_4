@@ -38,7 +38,7 @@
 
 -(NSString*)toString {
     NSString* res = [[NSString alloc] init];
-    res = [NSString stringWithFormat:@"Rectangle: Width = %.2f, Height = %.2f, S = %.2f, P = %.2f", _width, _height, [self square], [self perimeter]];
+    res = [NSString stringWithFormat:@"Rectangle: S = %.2f, Width = %.2f, Height = %.2f, P = %.2f", [self square], _width, _height, [self perimeter]];
     return res;
 }
 

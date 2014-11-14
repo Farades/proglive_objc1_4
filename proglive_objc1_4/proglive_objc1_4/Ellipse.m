@@ -38,7 +38,7 @@
 
 -(NSString*)toString {
     NSString* res = [[NSString alloc] init];
-    res = [NSString stringWithFormat:@"Ellipse: semimajor = %.2f, semiminor = %.2f, S = %.2f, P = %.2f", _semimajorAxis, _semiminorAxis, [self square], [self perimeter]];
+    res = [NSString stringWithFormat:@"Ellipse:   S = %.2f, semimajor = %.2f, semiminor = %.2f, P = %.2f", [self square], _semimajorAxis, _semiminorAxis, [self perimeter]];
     return res;
 }
 
